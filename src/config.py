@@ -38,15 +38,15 @@ TASK = 'regression'
 parser.add_argument('--task', default=TASK)
 
 # SUBTASK = 'dse'
-# SUBTASK = 'train'
-SUBTASK = 'inference'
+SUBTASK = 'train'
+# SUBTASK = 'inference'
 parser.add_argument('--subtask', default=SUBTASK)
 #########################################################################################################
 
 ##################### Flags for loading models #####################################################
 
 load_model = 'None'
-load_model = 'train_2024-03-26T19-12-18.035699_regression_scai5'
+#load_model = 'train_2024-03-26T19-12-18.035699_regression_scai5'
 #load_model = ''#path to your downloaded trained model.
 
 
@@ -608,7 +608,7 @@ if 'dse' in SUBTASK:
                         default=check_prepend_root_folder(load_model_class))
 
 
-# force_regen = True
+#force_regen = True
 force_regen = False
 parser.add_argument('--force_regen', type=bool, default=force_regen)
 
@@ -616,7 +616,8 @@ parser.add_argument('--force_regen', type=bool, default=force_regen)
 load_encoders_label = None
 #encoder_path = '../save/harp/r13-ifdb-epbch-regression_ep-False_nowi_False-n_speedup-log2_np_False_whole-machsuite-poly_programl_False_False_None_None_nosplit_regular_encoder_True_s_penhance_codet5_64_tm_pk_v2_fc_co16_programl+src_code_feed_pclcc_pseudo_ntic_igt/encoders.klepto'
 #encoder_path = 'None'
-encoder_path = 'logs/train_2024-03-26T19-12-18.035699_regression_scai5/progsg_preprocessors.klepto'
+encoder_path = None
+#encoder_path = 'logs/train_2024-03-26T19-12-18.035699_regression_scai5/progsg_preprocessors.klepto'
 
 
 if load_pretrained_GNN: # should be False
@@ -629,7 +630,7 @@ if encoder_path != 'None' and (not (encoder_path is None)):
     parser.add_argument('--load_encoders_label', type=str, default=load_encoders_label)
 
 #encoder_path = '../save/harp/r13-ifdb-epbch-regression_ep-False_nowi_False-n_speedup-log2_np_False_whole-machsuite-poly_programl_False_False_None_None_nosplit_regular_encoder_True_s_penhance_codet5_64_tm_pk_v2_fc_co16_programl+src_code_feed_pclcc_pseudo_ntic_igt/preprocessors.klepto'
-encoder_path = 'logs/train_2024-03-26T19-12-18.035699_regression_scai5/progsg_preprocessors.klepto'
+#encoder_path = 'logs/train_2024-03-26T19-12-18.035699_regression_scai5/progsg_preprocessors.klepto'
 parser.add_argument('--encoder_path', type=str, default=encoder_path)
 
 # outlier_removal = None
